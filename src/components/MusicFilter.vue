@@ -38,6 +38,7 @@ export default {
             this.selectedCode = "";
             this.$emit("setdefaultpage");
             await this.fetchSongs({ page: this.defaultPage });
+            this.$refs.focusSearch.focus();
         },
         debounce(func, timeout = 300) {
             let timer;
