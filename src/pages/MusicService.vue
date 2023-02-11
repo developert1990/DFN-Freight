@@ -8,6 +8,7 @@
                 <LoadingBox />
             </div>
             <div class="table-and-pagination-wrapper" v-else>
+                <MusicFilter @setdefaultpage="setDefaultPage" />
                 <MusicTable :currentPage="currentPage" @setdefaultpage="setDefaultPage" />
                 <pagination v-if="formattedSongs.length !== 0" :totalPages="totalPage" :currentPage="currentPage" @pagechanged="onPageChange" :totalSongs="totalSongs" />
             </div>
@@ -18,6 +19,7 @@
 import MusicTable from "../components/MusicTable.vue";
 import Pagination from "../components/Pagination.vue";
 import LoadingBox from "../components/LoadingBox.vue";
+import MusicFilter from "../components/MusicFilter.vue";
 import { useMusicStore } from "../stores/music";
 import { storeToRefs } from "pinia";
 
@@ -27,6 +29,7 @@ export default {
         MusicTable,
         Pagination,
         LoadingBox,
+        MusicFilter,
     },
     setup() {
         // Can not use destructuring for state properties and getters because they will lose their reactivity. So used storeToRefs utility, which creates a ref for each property.
@@ -82,5 +85,8 @@ export default {
 .table-and-pagination-wrapper {
     position: relative;
     min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>

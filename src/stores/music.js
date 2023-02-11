@@ -30,6 +30,7 @@ export const useMusicStore = defineStore({
         ],
         isAsc: false,
         prevCode: "id",
+        defaultPage: 1,
     }),
     getters: {
         getAlbumsById: (state) => {
