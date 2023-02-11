@@ -26,4 +26,4 @@ npm run serve
 
 6. I used port 9090 due to port 5000 is used on my local main system, but I set it back to 5000. If port 5000 is used on your side, use change port on the docker-compose file.
 
-7. Add `VUE_APP_LOCAL=http://localhost:9090` in the .env file.
+7. Add `VUE_APP_LOCAL=http://localhost:5000` in the .env file.
